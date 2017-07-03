@@ -72,7 +72,7 @@ public class DAO {
 		try {
 			
 			
-			PreparedStatement pst = DAO.getConnection().prepareStatement("INSERT INTO pruebas.resultados_selenium (Tipo,Navegador,Resultado,Traza) VALUES (?,?,?,?);");
+			PreparedStatement pst = DAO.getConnection().prepareStatement("INSERT INTO pruebas.resultados_selenium (Proyecto,Tipo,Navegador,Resultado,Traza) VALUES ('AgG',?,?,?,?);");
 			pst.setString(1, queTest);
 			pst.setString(2, QueNavegador);
 			pst.setInt(3, resulTest);

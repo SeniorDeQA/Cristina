@@ -7,7 +7,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import pantallas.PonUnTuit;
+import pantallas.Catalogo_centros;
+import pantallas.Sesion;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,6 +17,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class CuatroEnUno {
 	
 	static final String RUTA_SELENIUM = "C://Users//dortiz//workspace//selenium_3.4.0";
+	static final String IP_SERVIDOR = "82.223.19.68:8080";
 	public static WebDriver driver; 
 	static DesiredCapabilities caps;
 	
@@ -24,17 +26,21 @@ public class CuatroEnUno {
 		//Baterías de pruebas, abstraida de navegador
 		
 		try {
-			PonUnTuit.alta(QueNavegador);
+			Sesion.login(QueNavegador, IP_SERVIDOR);
+			
+			Catalogo_centros.Acceso_catalogo_centros(QueNavegador, IP_SERVIDOR);
+			//Catalogo_centros.Alta_catalogo_centros(QueNavegador);
+			
+			
+			//Sesion.logout(QueNavegador);
+			
 		} catch (SQLException e) {
 			System.out.println("-- Excepción al presistir resultado del test --");
 		} catch (Exception e) {
 			System.out.println("-- Excepción. Fijo que ha sido por no poder localizar un elemento --");
 		}
 		
-		
-		
-		
-		driver.quit();
+		//driver.quit();
 		System.out.println("FIN PRUEBAS en "+QueNavegador);
 	}
 	
@@ -43,7 +49,7 @@ public class CuatroEnUno {
 	private static void Lanzador(int Case) throws Exception{
 		//Lanzamos los navegadores, y pasamos a la prueba
 		
-		String baseURL = "https://twitter.com/";	
+		String baseURL = "http://"+IP_SERVIDOR+"/agintzari-gipuzkoa/login/auth";	
 		String QueNavegador;
 		
 		switch (Case) {
@@ -115,7 +121,7 @@ public class CuatroEnUno {
 		
 		//Solo iteramos para trabajar con 4 navegadores
 		//Pasamos a Lanzador
-		for (int i=1; i<=4; i++){
+		for (int i=4; i<=4; i++){
 			
 			switch (i) {
 		     case (1)://Edge

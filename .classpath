@@ -36,5 +36,6 @@
 	<classpathentry kind="lib" path="C:/Users/dortiz/workspace/selenium_3.4.0/lib/xalan-2.7.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dortiz/workspace/selenium_3.4.0/lib/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dortiz/workspace/selenium_3.4.0/lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dortiz/workspace/mysql-connector-java-5.1.38-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
